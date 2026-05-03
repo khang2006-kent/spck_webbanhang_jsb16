@@ -1,0 +1,149 @@
+/* Custom Styles */
+
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #d4af37; /* Màu vàng Gold cho sự thành công */
+    --text-font: 'Open Sans', sans-serif;
+    --heading-font: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--text-font);
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+    font-family: var(--heading-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navbar */
+.navbar-brand span {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    min-height: 500px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #000;
+    font-weight: 600;
+    padding: 12px 30px;
+}
+
+.btn-primary:hover {
+    background-color: #b8962d;
+    border-color: #b8962d;
+    color: #fff;
+}
+
+/* Section Title */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Book Cards */
+.book-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Communication Cards */
+.comm-card {
+    border-left: 5px solid var(--accent-color);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.comm-card:hover,
+.comm-card:focus-visible {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+/* Make the whole card clearly interactive and keyboard-accessible */
+.comm-card {
+    cursor: pointer;
+}
+
+.comm-card:focus-visible {
+    outline: 3px solid rgba(212,175,55,0.25);
+    outline-offset: 4px;
+}
+
+/* Navbar and content buttons: hover + focus styles */
+.navbar a,
+.navbar .nav-link,
+.navbar-brand,
+.navbar .btn,
+.btn,
+.btn-primary,
+button {
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform;
+}
+
+.navbar a:hover,
+.navbar .nav-link:hover,
+.navbar-brand:hover,
+.navbar .btn:hover,
+.btn:hover,
+.btn-primary:hover,
+button:hover {
+    transform: translateY(-4px);
+}
+
+.navbar a:focus-visible,
+.navbar .nav-link:focus-visible,
+.navbar-brand:focus-visible,
+.navbar .btn:focus-visible,
+.btn:focus-visible,
+.btn-primary:focus-visible,
+button:focus-visible {
+    outline: 3px solid rgba(212,175,55,0.25);
+    outline-offset: 4px;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
