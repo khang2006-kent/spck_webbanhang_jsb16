@@ -1,0 +1,8 @@
+{
+  "name": "Lumina Music Pure",
+  "description": "A high-performance music streaming portal built with pure HTML, CSS, and Vanilla JavaScript. Features glassmorphism and smooth animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
