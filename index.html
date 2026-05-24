@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina Music Pure</title>
+    <title>COASTVIBE</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -22,22 +22,22 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-                <span class="logo-text">LUMINA</span>
+                <span class="logo-text">COASTVIBE</span>
             </div>
 
             <div class="nav-section">
-                <div class="nav-section-title">Menu chính</div>
+                <div class="nav-section-title">Main menu/Menu chính</div>
                 <a href="#" class="nav-link active">
                     <i class="bi bi-house-door-fill"></i>
-                    <span>Trang chủ</span>
+                    <span>Trang chủ - home</span>
                 </a>
                 <a href="#" class="nav-link">
                     <i class="bi bi-compass"></i>
-                    <span>Khám phá</span>
+                    <span>Khám phá - explore</span>
                 </a>
                 <a href="#" class="nav-link">
                     <i class="bi bi-collection-play"></i>
-                    <span>Thư viện</span>
+                    <span>Thư viện - library</span>
                 </a>
             </div>
 
@@ -45,7 +45,7 @@
                 <div class="nav-section-title">Cá nhân</div>
                 <a href="#" class="nav-link">
                     <i class="bi bi-heart"></i>
-                    <span>Yêu thích</span>
+                    <span>Yêu thích - favorite song</span>
                 </a>
                 <a href="#" class="nav-link">
                     <i class="bi bi-music-note-list"></i>
@@ -53,7 +53,7 @@
                 </a>
                 <a href="#" class="nav-link">
                     <i class="bi bi-mic"></i>
-                    <span>Nghệ sĩ</span>
+                    <span>Nghệ sĩ - singer</span>
                 </a>
             </div>
 
@@ -72,6 +72,10 @@
                 <div class="search-bar-container">
                     <i class="bi bi-search search-icon"></i>
                     <input type="text" class="search-input" placeholder="Tìm kiếm âm nhạc, podcast...">
+                </div>
+                <div class="header-actions" style="display:flex;align-items:center;gap:12px;">
+                    <button id="spotify-connect-btn" class="btn btn-spotify" style="background:#1DB954;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Kết nối Spotify</button>
+                    <div id="spotify-status" style="font-size:0.85rem;color:rgba(255,255,255,0.7);"></div>
                 </div>
             </header>
 
@@ -100,27 +104,27 @@
 
         <div class="controls-container">
             <div class="btn-group">
-                <button class="btn-icon"><i class="bi bi-shuffle"></i></button>
-                <button class="btn-icon"><i class="bi bi-skip-start-fill" style="font-size: 1.5rem;"></i></button>
+                <button class="btn-icon" id="shuffle-btn"><i class="bi bi-shuffle"></i></button>
+                <button class="btn-icon" id="prev-btn"><i class="bi bi-skip-start-fill" style="font-size: 1.5rem;"></i></button>
                 <button class="btn-icon btn-play-pause" id="play-pause-btn">
                     <i class="bi bi-play-fill" style="font-size: 1.8rem;"></i>
                 </button>
-                <button class="btn-icon"><i class="bi bi-skip-end-fill" style="font-size: 1.5rem;"></i></button>
-                <button class="btn-icon"><i class="bi bi-repeat"></i></button>
+                <button class="btn-icon" id="next-btn"><i class="bi bi-skip-end-fill" style="font-size: 1.5rem;"></i></button>
+                <button class="btn-icon" id="repeat-btn"><i class="bi bi-repeat"></i></button>
             </div>
             <div class="progress-container">
-                <span>1:25</span>
-                <div class="progress-bg">
-                    <div class="progress-fill"></div>
+                <span id="current-time">0:00</span>
+                <div class="progress-bg" id="progress-bg">
+                    <div class="progress-fill" id="progress-fill"></div>
                 </div>
-                <span>3:48</span>
+                <span id="duration">0:00</span>
             </div>
         </div>
 
         <div class="extra-controls">
-            <i class="bi bi-volume-up" style="opacity: 0.5;"></i>
-            <div class="volume-slider">
-                <div class="volume-fill"></div>
+            <i class="bi bi-volume-up" id="volume-icon" style="opacity: 0.5;"></i>
+            <div class="volume-slider" id="volume-slider">
+                <div class="volume-fill" id="volume-fill"></div>
             </div>
             <button class="btn-icon ms-3"><i class="bi bi-pip"></i></button>
             <button class="btn-icon"><i class="bi bi-list"></i></button>
@@ -128,6 +132,7 @@
     </div>
 
     <!-- Custom JS -->
+    <script src="spotify.js"></script>
     <script src="lumina_script.js"></script>
 </body>
 </html>
